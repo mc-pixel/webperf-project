@@ -1,0 +1,27 @@
+.container {
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.title {
+    font-size: 32px;
+    line-height: 1.3em;
+    margin: 0 0 20px;
+}
+
+.paragraph {
+    margin: 0;
+    line-height: 1.5em;
+    font-size: 20px;
+}
+
+.paragraph + .paragraph {
+    margin-top: 10px;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}

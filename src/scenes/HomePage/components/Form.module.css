@@ -1,0 +1,21 @@
+.form {
+  max-width: 500px;
+  margin: 2em auto;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.error {
+  color: yellow;
+}

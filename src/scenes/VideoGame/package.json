@@ -1,0 +1,9 @@
+{
+  "name": "video-game",
+  "version": "0.0.0",
+  "dependencies": {
+    "framer-motion": "^6.3.6",
+    "lodash": "4.17.21",
+    "classnames": "^2.3.1"
+  }
+}

@@ -1,0 +1,31 @@
+Arguments: 
+  /opt/homebrew/Cellar/node@14/14.19.3/bin/node /Users/eirikur/.yarn/bin/yarn.js config get npmScopes --json
+
+PATH: 
+  /opt/homebrew/opt/node@14/bin:/Users/eirikur/.yarn/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/usr/local/share/dotnet:~/.dotnet/tools
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  14.19.3
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/eirikur/code/harbour/webperf-project-2/src/scenes/VideoGame/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /Users/eirikur/.yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/eirikur/.yarn/lib/cli.js:310:30)
+      at /Users/eirikur/.yarn/lib/cli.js:321:13
+
+npm manifest: 
+  
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

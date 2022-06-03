@@ -1,0 +1,127 @@
+.scene {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./bg.jpg) no-repeat center / cover;
+}
+
+.levelBg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: background 5s;
+}
+
+.turret {
+  position: absolute;
+  left: 50%;
+  margin-left: -40px;
+  bottom: 10px;
+  height: 24px;
+  width: 80px;
+  background: #2aa198;
+  border-radius: 4px 4px 0 0;
+
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.4) inset;
+}
+
+/* wheels */
+.turret::before,
+.turret::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2aa198;
+  bottom: -10px;
+  z-index: -1;
+}
+
+.turret::before {
+  left: 10px;
+}
+
+.turret::after {
+  right: 10px;
+}
+
+.barrel {
+  width: 12px;
+  height: 50px;
+  position: absolute;
+  border-radius: 6px;
+  left: 50%;
+  margin-left: -6px;
+  bottom: calc(100% - 10px);
+  background: #1a9744;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  transform-origin: 6px 44px;
+}
+
+.status {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1vw;
+  color: #fff;
+  text-align: right;
+  line-height: 1.5vw;
+  white-space: pre-line;
+}
+
+.modal {
+  position: absolute;
+  width: 50vw;
+  padding: 5vw;
+  font-size: 2vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.entity {
+  position: absolute;
+}
+
+.entityShot {
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  background: #ffa500;
+}
+
+.entityEnemy {
+  width: 60px;
+  height: 40px;
+  margin: -20px 0 0 -30px;
+  background: #ffffff;
+}
+
+.entityEnemyRed {
+  background: #ff0000;
+}
+
+.entityEnemyGreen {
+  background: #00ff00;
+}
+
+.entityEnemyPurple {
+  background: #ff00ff;
+}
+
+.entityEnemyBlue {
+  background: #0000ff;
+}
