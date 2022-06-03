@@ -9,7 +9,7 @@
 
 ## How to work?
 
-Your goal is to find and fix performance issues related to this week's material: 
+Your goal is to find and fix performance issues related to this week's material:
 
 - Bundling, dependencies, tree shaking, side-effects, lazy loading, JS waterfalls.
 - JS performance, O-complexity.
@@ -19,7 +19,7 @@ Your goal is to find and fix performance issues related to this week's material:
 ## Optimization guidance
 
 - You are not supposed to remove any existing logic, but in some cases you can replace libraries with better or smaller alternatives.
-- Optimising the video game requires you to get your hands dirty. First to understand the code, and then to rewrite parts of it. Hopefully TypeScript helps. 
+- Optimising the video game requires you to get your hands dirty. First to understand the code, and then to rewrite parts of it. Hopefully TypeScript helps.
 - You do not have to fix any issues from last week's material. We already covered that stuff in the previous Weekly Project.
 - There are some minor JS performance issues in the code which I want you to fix in this weekly project as an exercise, even though they don't seriously affect the performance of the app. In the real world, you should not focus on these kinds of "non-issues".
 
@@ -33,6 +33,6 @@ Your solution should be yours alone. You are welcome and encouraged to support y
 
 **Finish on time:** 30% (changes to 15% if delivered late or with less then half of the requirements)
 
-**Requirements:** 60%
+**Requirements:** 60% for finishing 15 of the 19 requirements. Finishing more requirements gives 4% each.
 
 **Extra challenges:** 10% each (max 2)
