@@ -7,7 +7,9 @@
     "starter"
   ],
   "private": true,
-  "workspaces": ["src/scenes/*"],
+  "workspaces": [
+    "src/scenes/*"
+  ],
   "dependencies": {
     "@types/jest": "^27.5.2",
     "@types/lodash": "^4.14.182",

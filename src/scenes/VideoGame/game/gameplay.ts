@@ -80,10 +80,11 @@ function updateBarrel(state: GameState) {
 function updateEntities(state: GameState, updateTime: number, delta: number) {
   state.entities.forEach((entity) => {
     // Shots go in a straight direction based on their velocity.
+    const prevStyles = window.getComputedStyle(entity.el);
     if (entity.type === "shot") {
       const newPos = {
-        x: parseFloat(entity.el.style.left) + entity.velocity.x * delta,
-        y: parseFloat(entity.el.style.top) + entity.velocity.y * delta,
+        x: parseFloat(prevStyles.left) + entity.velocity.x * delta,
+        y: parseFloat(prevStyles.top) + entity.velocity.y * delta,
       };
       entity.el.style.left = `${newPos.x}px`;
       entity.el.style.top = `${newPos.y}px`;
@@ -94,7 +95,7 @@ function updateEntities(state: GameState, updateTime: number, delta: number) {
       // Normal and "sine" enemies generally move down according to some speed.
       if (variant === "normal" || variant === "sine") {
         const newY =
-          parseFloat(entity.el.style.top) +
+          parseFloat(prevStyles.top) +
           window.innerHeight * entity.enemySpawn.speed * delta;
         entity.el.style.top = `${newY}px`;
       }
