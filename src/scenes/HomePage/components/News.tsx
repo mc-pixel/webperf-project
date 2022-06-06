@@ -16,7 +16,6 @@ const query = gql`
   }
 `;
 
-export const News = () =>
-  graphql(query)(() => {
-    return null; // Some fancy news
-  });
+export const News = graphql(query)(() => {
+  return null; // Some fancy news
+});
