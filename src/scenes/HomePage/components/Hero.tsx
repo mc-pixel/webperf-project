@@ -1,4 +1,5 @@
 import s from "./Hero.module.css";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
@@ -6,9 +7,9 @@ export const Hero = () => {
       <img className={s.image} src="bg.jpg" alt="" />
       <div className={s.center}>
         <h1 className={s.title}>Star fighter</h1>
-        <a className={s.button} href="/game">
+        <Link className={s.button} to="/game">
           Start
-        </a>
+        </Link>
       </div>
     </section>
   );

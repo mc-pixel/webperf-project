@@ -4,6 +4,7 @@ import s from "./ui/styles.module.css";
 import { initialState } from "./game/state";
 import { onMouseClick, onMouseMove } from "./game/actions";
 import { update } from "./game/gameplay";
+import { Link } from "react-router-dom";
 
 export default () => {
   const gameState = useRef(initialState());
@@ -22,6 +23,9 @@ export default () => {
 
   return (
     <div className={s.scene} onMouseMove={mouseMove} onClick={mouseClick}>
+      <Link to="/" style={{ position: "relative", zIndex: 2999 }}>
+        Start
+      </Link>
       <div
         className={s.levelBg}
         ref={(el) => (gameState.current.levelBgEl = el)}
