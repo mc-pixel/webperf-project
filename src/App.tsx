@@ -1,6 +1,7 @@
 import "./styles.css";
-import HomePage from "./scenes/HomePage";
-import VideoGame from "./scenes/VideoGame";
+import { lazy } from "react";
+const HomePage = lazy(() => import("./scenes/HomePage"))
+const VideoGame = lazy (() => import("./scenes/VideoGame"))
 import { Routes, Route } from "react-router-dom";
 
 export default function App() {

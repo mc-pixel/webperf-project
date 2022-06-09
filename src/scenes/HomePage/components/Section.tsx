@@ -1,5 +1,5 @@
 import { ReactNode, useMemo } from "react";
-import _ from "lodash";
+import capitalize from "lodash/capitalize";
 import { faker } from "@faker-js/faker";
 import s from "./Section.module.css";
 
@@ -14,7 +14,7 @@ export const Section = () => {
 
   return (
     <section className={s.container}>
-      <h2 className={s.title}>{_.capitalize(info.title)}</h2>
+      <h2 className={s.title}>{capitalize(info.title)}</h2>
       {info.body.map((paragraph, index) => (
         <p className={s.paragraph} key={index}>
           {paragraph}

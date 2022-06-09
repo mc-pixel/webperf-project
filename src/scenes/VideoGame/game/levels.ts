@@ -1,7 +1,7 @@
 import { enemyHeight, enemyWidth, scenePadding } from "./constants";
 import { EnemySpawn, Vector } from "./types";
 import { getRandomSnakeLines } from "./utils";
-import _ from "lodash";
+import times from "lodash/times";
 
 /**
  * Generate a random position for an enemy. Tries to responsively account for enemy widths and padding.
@@ -17,7 +17,7 @@ export const getRandomSpawnPosition = (enemyWidth: number): Vector => {
 const levelCreators: Array<() => EnemySpawn[]> = [
   // Level 1
   () => {
-    return _.times<EnemySpawn>(10, () => ({
+    return times<EnemySpawn>(10, () => ({
       variant: "normal",
       style: "Red",
       delay: 2,
@@ -27,7 +27,7 @@ const levelCreators: Array<() => EnemySpawn[]> = [
   },
   // Level 2
   () => {
-    return _.times<EnemySpawn>(15, (i) =>
+    return times<EnemySpawn>(15, (i) =>
       i % 5
         ? {
             variant: "normal",
@@ -50,7 +50,7 @@ const levelCreators: Array<() => EnemySpawn[]> = [
   // Level 3
   () => {
     return [
-      ..._.times<EnemySpawn>(3, () => ({
+      ...times<EnemySpawn>(3, () => ({
         variant: "normal",
         style: "Red",
         delay: 0,
@@ -64,7 +64,7 @@ const levelCreators: Array<() => EnemySpawn[]> = [
         position: getRandomSpawnPosition(enemyWidth),
         speed: 0.1,
       },
-      ..._.times<EnemySpawn>(4, () => ({
+      ...times<EnemySpawn>(4, () => ({
         variant: "normal",
         style: "Red",
         delay: 0,
@@ -78,7 +78,7 @@ const levelCreators: Array<() => EnemySpawn[]> = [
         position: getRandomSpawnPosition(enemyWidth),
         speed: 0.1,
       },
-      ..._.times<EnemySpawn>(6, () => ({
+      ...times<EnemySpawn>(6, () => ({
         variant: "normal",
         style: "Red",
         delay: 0,
@@ -90,7 +90,7 @@ const levelCreators: Array<() => EnemySpawn[]> = [
   // Level 4
   () => {
     return [
-      ..._.times<EnemySpawn>(12, () => ({
+      ...times<EnemySpawn>(12, () => ({
         variant: "normal",
         style: "Green",
         delay: 1.5,
@@ -102,7 +102,7 @@ const levelCreators: Array<() => EnemySpawn[]> = [
   // Level 5
   () => {
     return [
-      ..._.times<EnemySpawn>(10, () => ({
+      ...times<EnemySpawn>(10, () => ({
         variant: "sine",
         style: "Purple",
         delay: 2,
@@ -116,7 +116,7 @@ const levelCreators: Array<() => EnemySpawn[]> = [
   // Level 6
   () => {
     return [
-      ..._.times<EnemySpawn>(50, () => ({
+      ...times<EnemySpawn>(50, () => ({
         variant: "snake",
         style: "Blue",
         delay: 0.3,
@@ -128,7 +128,7 @@ const levelCreators: Array<() => EnemySpawn[]> = [
   },
   // Level 7
   () => {
-    return _.times<EnemySpawn>(50, () => {
+    return times<EnemySpawn>(50, () => {
       switch (Math.floor(Math.random() * 4)) {
         case 0:
           return {

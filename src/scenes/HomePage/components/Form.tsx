@@ -1,31 +1,36 @@
 import { useForm, Controller } from "react-hook-form";
 import { PhoneNumber, PhoneNumberUtil } from "google-libphonenumber";
 import DatePicker from "react-datepicker";
-import moment from "moment";
+import dayjs from "dayjs";
 
 import "react-datepicker/dist/react-datepicker.css";
 import s from "./Form.module.css";
 
 function daysUntilBirthday(date: Date) {
-  const m1 = moment(date);
-  m1.set({ year: moment().year() });
-  if (m1.isBefore(moment())) {
+  const m1 = dayjs(date);
+  if (m1.isBefore(dayjs())) {
     m1.add(1, "y");
   }
-  return m1.diff(moment(), "days");
+  return m1.diff(dayjs(), "days");
 }
-
-function validatePhoneNumber(value: string) {
-  const instance = PhoneNumberUtil.getInstance();
+async function validatePhoneNumber(value: string) {
+  const instance = await getLibPhoneNumber();
   try {
-    const phoneNumber = instance.parseAndKeepRawInput(value, "IS");
-    return instance.isValidNumberForRegion(phoneNumber as PhoneNumber, "IS");
+    const phoneNumber = instance.parseAndKeepRawInput(value, 'IS');
+    return instance.isValidNumberForRegion(phoneNumber as PhoneNumber, 'IS');
   } catch (e) {
     return false;
   }
+}let phoneNumberPromise: null | Promise<PhoneNumberUtil> = null;
+function getLibPhoneNumber() {
+  if (!phoneNumberPromise) {
+    phoneNumberPromise = import('google-libphonenumber').then((lib) =>
+      lib.PhoneNumberUtil.getInstance()
+    );
+  }
+  return phoneNumberPromise;
 }
-
-export const Form = () => {
+const Form = () => {
   const {
     register,
     control,
@@ -108,3 +113,4 @@ export const Form = () => {
     </section>
   );
 };
+export default Form
